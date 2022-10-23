@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 const feedbackSchema = new Schema({
   message: {
     type: String,
@@ -13,7 +13,7 @@ const feedbackSchema = new Schema({
   },
 }, {
   timestamps: true,
-})
+});
 
 const Feedback = mongoose.model('Feedback', feedbackSchema);
 

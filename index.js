@@ -1,6 +1,6 @@
-import app from "./server.js";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import app from './server.js';
 
 dotenv.config();
 
@@ -11,12 +11,12 @@ mongoose
     {
       useNewUrlParser: true,
     })
-  .then( async client => {
-    app.listen(port, () => console.log(`App is listening on port ${port}!`))
-  } )
+  .then(async () => {
+    app.listen(port, () => console.log(`App is listening on port ${port}!`));
+  })
   .catch((err) => {
     console.error(err.stack);
     process.exit(1);
   });
 
-  mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;

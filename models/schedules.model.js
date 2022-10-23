@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 const scheduleSchema = new Schema({
   name: {
     type: String,
     required: [true, 'Patient name must be provided.'],
-    maxlength: [30, 'Patient name can not exceed 30 characters.']
+    maxlength: [30, 'Patient name can not exceed 30 characters.'],
   },
   SN: {
     type: Number,
@@ -49,8 +49,8 @@ scheduleSchema.virtual('feedback', {
   foreignField: 'schedule',
 });
 
-scheduleSchema.set('toObject', {virtuals: true});
-scheduleSchema.set('toJSON', {virtuals: true});
+scheduleSchema.set('toObject', { virtuals: true });
+scheduleSchema.set('toJSON', { virtuals: true });
 
 const Schedule = mongoose.model('Schedule', scheduleSchema);
 
